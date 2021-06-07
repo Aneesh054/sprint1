@@ -5,34 +5,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 import java.time.LocalDate;
 
 import lombok.Data;
 
 @Entity
 @Data
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "mechanicsId", scope = Integer.class)
 public class Mechanics {
-
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int mechanicsId;
-	@Column(nullable = false)
+	@Column(nullable=false)
 	private String mechanicsName;
-	@Column(nullable = false)
+	@Column(nullable=false)
 	private int mechanicsAge;
-	@Column(nullable = false)
+	@Column(nullable=false,unique=true)
 	private String mechanicsMobile;
-	private LocalDate joiningDate = LocalDate.now();
-
+	private LocalDate joiningDate =LocalDate.now();
+	
 	@Column(nullable = false)
 	public boolean isDeleted = false;
 	public String create_Date_Time;
 	public String update_Date_Time;
+	
 	
 
 }

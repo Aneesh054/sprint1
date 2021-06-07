@@ -15,10 +15,9 @@ import lombok.Data;
 @Data
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "user_id", scope = Integer.class)
 public class UserDetails {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 	private int user_id;
 	@Column(nullable = false, unique = true)
 	private String user_name;
@@ -30,11 +29,11 @@ public class UserDetails {
 	private String user_password;
 	@Column(nullable = false)
 	private String user_type;
-
+	
 	@Column(nullable = false)
 	public boolean isDeleted = false;
-	 
 	public String create_Date_Time;
 	public String update_Date_Time;
+	
 
 }

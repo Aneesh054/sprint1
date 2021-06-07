@@ -1,11 +1,7 @@
-package com.capgemini.exception;
+ package com.capgemini.exception;
 
-import java.time.LocalDateTime;
-
-import lombok.Data;
-@Data
-public class ErrorDetails {
-	private String messsage;
-	private LocalDateTime timestamp;
+public class UserDetailsException extends Exception{
+ public UserDetailsException(String message) {
+	 super(message);
+ }
 }
-
